@@ -3,6 +3,9 @@
 <head>
   <title>eDNA Expedition</title>
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="eDNA.css">
+  <link rel="stylesheet" type="text/css" href="test.css">
+
   <link rel="icon" type="image/x-icon" href="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/favicon.png?raw=true">
 </head>
 <body>
@@ -35,60 +38,225 @@
       <div class="bannertext">Become a CALeDNA Scientist: Explore your local ecosystems and contribute to the University of California’s community eDNA project </div>
       <div class="banner"></div>
     </div>
-
-      <div class="projectgallery">
-        <ul class="gallery">
-          <!-- <li style="background: #f6bd60;"></li>
-          <li <a href="#"><img src="http://thehypebr.com/wp-content/uploads/2010/09/boundless-sem-branco-2.jpg" alt="Image" /></a>"></li>
-          <li style="background: url('');"></li>-->
-          <li style="background: #84a59d;"></li>
-          <li style="background: #82d4f2;"><a href="google.com"></a></li>
-          <li style="
-           background: url('https://media.istockphoto.com/id/543055588/photo/cows-in-a-meadow-at-sunrise.jpg?s=170667a&w=0&k=20&c=Nj1tbyAzIcgQfKYG3z9kSZsRZStb9a99NkmJf1McW28=');
-           background-size: cover;
-           background-repeat: no-repeat;"></li>
-          <li style="background: #9784a5;"></li>
-          <li style="image"><a href="https:google.com"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/CALeDNA1.png?raw=true" alt="Image" /></a>"></li>
-        </ul>
-        <script>
-        const slider = document.querySelector('.gallery');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        
-        slider.addEventListener('mousedown', e => {
-          isDown = true;
-          slider.classList.add('active');
-          startX = e.pageX - slider.offsetLeft;
-          scrollLeft = slider.scrollLeft;
-        });
-        slider.addEventListener('mouseleave', _ => {
-          isDown = false;
-          slider.classList.remove('active');
-        });
-        slider.addEventListener('mouseup', _ => {
-          isDown = false;
-          slider.classList.remove('active');
-        });
-        slider.addEventListener('mousemove', e => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - slider.offsetLeft;
-          const SCROLL_SPEED = 3;
-          const walk = (x - startX) * SCROLL_SPEED;
-          slider.scrollLeft = scrollLeft - walk;
-        });
-        </script>
-        
+ 
+    <div class="container" id="container">
+      <div class="caption" id="slider-caption">
+          <div class="caption-heading">
+              <h1>Lorem Ipsum</h1>
+          </div>
+          <div class="caption-subhead"><span>A study on invasive species and environmental factors at play</span></div><a class="btn" href="#">Sit Amet</a>
       </div>
-   <div class="WIP">
-        <h1 style="color: #206833; align-items: center; padding-left: 40px;"> WIP, I'm working on it! -Jorge</h1>
-        <h2 style="color: #5e8067; align-items: center; padding-left: 40px; max-width: 600px"> Imagine: This is the What is eDNA section, it will be pretty </h2>
-        <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/WIP.png?raw=true"
-        style="max-width: 600px; align-items: center; align-content: center;">
-    </div>
+      <div class="left-col" id="left-col">
+          <div id="left-slider"></div>
+      </div>
+      <ul class="navslide">
+          <li class="slide-up"> <a href="#">
+                  </a>
+          </li>
+          <li class="slide-down"> <a id="down_button" href="#">></a></li>
+      </ul>
+    <script>
+      let slide_data = [
+  {
+    'src':'https://rare-gallery.com/uploads/posts/789847-Russian-River-Healdsburg-USA-Autumn-Rivers-Forests.jpg',
+    'title':'Russian River Project',
+    'copy':'A study on invasive species and environmental factors at play'
+  },
+  {
+    'src':'https://media.zenfs.com/en-US/best_life_342/3547fb09e6acab21e34ab8fe2591f17d', 
+    'title':'Dung Beetles',
+    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
+  },
+  {
+    'src':'https://wallpapercave.com/wp/wp2269709.jpg', 
+    'title':'Honey Bees',
+    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
+  },
+  {
+    'src':'https://media.istockphoto.com/id/1303715071/vector/dna-gel-run-abstract-background.jpg?s=612x612&w=0&k=20&c=B3Qc-0Ew1Th0bC07S4Fd47kDsNkySE9qa2Xi_O9o77M=', 
+    'title':'View All Projects',
+    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
+  },
+  
+];
+let slides = [],
+  captions = [];
 
+let autoplay = setInterval(function(){
+  nextSlide();
+},5000);
+let container = document.getElementById('container');
+let leftSlider = document.getElementById('left-col');
+// console.log(leftSlider);
+let down_button = document.getElementById('down_button');
+// let caption = document.getElementById('slider-caption');
+// let caption_heading = caption.querySelector('caption-heading');
+
+down_button.addEventListener('click',function(e){
+  e.preventDefault();
+  clearInterval(autoplay);
+  nextSlide();
+  autoplay;
+});
+
+for (let i = 0; i< slide_data.length; i++){
+  let slide = document.createElement('div'),
+      caption = document.createElement('div'),
+      slide_title = document.createElement('div');
     
+  slide.classList.add('slide');
+  slide.setAttribute('style','background:url('+slide_data[i].src+')');
+  caption.classList.add('caption');
+  slide_title.classList.add('caption-heading');
+  slide_title.innerHTML = '<h1>'+slide_data[i].title+'</h1>';
+  
+  switch(i){
+    case 0:
+        slide.classList.add('current');
+        caption.classList.add('current-caption');
+        break;
+    case 1:
+        slide.classList.add('next');
+        caption.classList.add('next-caption');
+        break;
+    case slide_data.length -1:
+      slide.classList.add('previous');
+      caption.classList.add('previous-caption');
+      break;
+    default:
+       break;       
+  }
+  caption.appendChild(slide_title);
+  caption.insertAdjacentHTML('beforeend','<div class="caption-subhead"><span></span></div>');
+  slides.push(slide);
+  captions.push(caption);
+  leftSlider.appendChild(slide);
+  container.appendChild(caption);
+}
+// console.log(slides);
+
+function nextSlide(){
+  // caption.classList.add('offscreen');
+  
+  slides[0].classList.remove('current');
+  slides[0].classList.add('previous','change');
+  slides[1].classList.remove('next');
+  slides[1].classList.add('current');
+  slides[2].classList.add('next');
+  let last = slides.length -1;
+  slides[last].classList.remove('previous');
+  
+  captions[0].classList.remove('current-caption');
+  captions[0].classList.add('previous-caption','change');
+  captions[1].classList.remove('next-caption');
+  captions[1].classList.add('current-caption');
+  captions[2].classList.add('next-caption');
+  let last_caption = captions.length -1;
+  
+  // console.log(last);
+  captions[last].classList.remove('previous-caption');
+  
+  let placeholder = slides.shift();
+  let captions_placeholder = captions.shift();
+  slides.push(placeholder); 
+  captions.push(captions_placeholder);
+}
+
+let heading = document.querySelector('.caption-heading');
+
+
+// https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
+var transitionEvent = whichTransitionEvent()
+caption.addEventListener(transitionEvent, customFunction);
+
+function customFunction(event) {
+  caption.removeEventListener(transitionEvent, customFunction);
+  console.log('animation ended');
+
+  // Do something when the transition ends
+}
+
+
+
+    </script>
+  </div>
+
+
+<!--Hey! This is the original version
+of Simple CSS Waves-->
+
+<div class="header">
+
+  <!--Content before waves-->
+  <div class="inner-header flex">
+  <!--Just the logo.. Don't mind this-->
+  
+  <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+  WHAT IS ENVIRONMENTAL DNA?</h1>
+  </div>
+  
+  <!--Waves Container-->
+  <div>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+  <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+  </g>
+  </svg>
+  </div>
+  <!--Waves end-->
+  
+  </div>
+  <!--Header ends-->
+  
+  <!--Content starts-->
+  </div> 
+  
+  <h2>The eDNA Workflow</h2>
+  <h3></h3>
+  <div class="container" id="workflow">
+    <div class="boxinfo">
+      <img src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto/https://www.gcu.edu/sites/default/files/media/images/Blog/medical-studies-sciences/environmental_scientist.jpg">
+      <span style="font-size: 18px;">Sample Collection</span>
+    </div>
+    <div class="boxinfo">
+      <img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F9d10c8aa-36da-11ea-ac3c-f68c10993b04?fit=scale-down&source=next&width=700">
+      <span style="font-size: 18px;">Extraction & Metabarcoding</span>
+    </div>
+    <div class="boxinfo">
+      <img src="https://hudsonrobotics.com/wp-content/uploads/2021/05/Next-Generation-Sequencing-Methods-101.jpg">
+      <span style="font-size: 16px;">DNA Sequencing & Identification</span>
+    </div>
+    <div class="boxinfo">
+      <img src="https://www.cell.com/cms/attachment/941586e7-727a-4ad8-8369-53867697da90/gr1_lrg.jpg">
+      <span style="font-size: 18px;">Ecological Analysis</span>
+    </div>
+  </div>
+  <!--Content ends-->
     
 <div class="articlecontainer">
   <div class="art-cont">
@@ -138,586 +306,3 @@
 </body>
 </html>
 
-<style>
-  nav {
-    top: 10px;
-    width: 319px;
-    display: inline-flex;
-    margin: 0px 5px;}
-  
-  nav a {
-    position: relative;
-    width: 33.333%;
-    display: table-cell;
-    text-align: center;
-    color: #949494;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 30px 30px;
-    transition: 0.2s ease color;
-  }
-  
-  nav a:before,
-  nav a:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 0.2s ease transform;
-  }
-  
-  nav a:before {
-    top: 25%;
-    left: 20px;
-    width: 6px;
-    height: 6px;
-  }
-  
-  nav a:after {
-    top: 16%;
-    left: 18px;
-    width: 4px;
-    height: 4px;
-  }
-  
-  nav a:nth-child(1):before {
-    background-color: yellow;
-  }
-  
-  nav a:nth-child(1):after {
-    background-color: red;
-  }
-  
-  nav a:nth-child(2):before {
-    background-color: #00e2ff;
-  }
-  
-  nav a:nth-child(2):after {
-    background-color: #89ff00;
-  }
-  
-  nav a:nth-child(3):before {
-    background-color: purple;
-  }
-  
-  nav a:nth-child(3):after {
-    background-color: palevioletred;
-  }
-  
-  nav a:nth-child(4):before {
-    background-color: purple;
-  }
-  
-  nav a:nth-child(4):after {
-    background-color: palevioletred;
-  }
-  nav a:nth-child(5):before {
-    background-color: purple;
-  }
-  
-  nav a:nth-child(5):after {
-    background-color: palevioletred;
-  }
-  
-  nav a:nth-child(6):before {
-    background-color: purple;
-  }
-  
-  nav a:nth-child(6):after {
-    background-color: palevioletred;
-  }
-  
-  
-  #indicator {
-    position: absolute;
-    left: 5%;
-    top: 10%;
-    width: 30px;
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    transition: 0.2s ease left;
-  }
-  
-  nav a:hover {
-    color: rgb(29, 23, 23);
-  }
-  
-  nav a:hover:before,
-  nav a:hover:after {
-    transform: scale(1);
-  }
-  
-  nav a:nth-child(1):hover ~ #indicator {
-    background: linear-gradient(130deg, yellow, red);
-    left:50%;
-  }
-  
-  nav a:nth-child(2):hover ~ #indicator {
-    left: 20%;
-    background: linear-gradient(130deg, #00e2ff, #89ff00);
-  }
-  
-  nav a:nth-child(3):hover ~ #indicator {
-    left: 28.75%;
-    background: linear-gradient(130deg, purple, palevioletred);
-  }
-  
-  nav a:nth-child(4):hover ~ #indicator {
-    left: 38.4%;
-    background: linear-gradient(130deg, purple, palevioletred);
-  }
-  
-  nav a:nth-child(5):hover ~ #indicator {
-    left: 51.425%;
-    background: linear-gradient(130deg, purple, palevioletred);
-  }
-  nav a:nth-child(6):hover ~ #indicator {
-    left: 63.25%;
-    background: linear-gradient(130deg, purple, palevioletred);
-  }
-  
-    section.wrapper {
-    min-width: 400px; /* Minimum width of your wrapper element */
-    overflow: hidden;
-    display: flex;
-  }
-  .gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(10, 60vw);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    overflow: scroll;
-    height: 50vh;
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-  }
-  
-  .active {
-    scroll-snap-type: unset;
-  }
-  
-  li {
-    scroll-snap-align: center;
-    display: inline-block;
-    border-radius: 3px;
-    font-size: 0;
-    overflow: hidden;
-    object-fit: cover;
-  }
-  
-  
-   .navbar {
-    display: flex;
-    justify-content: left;
-    padding: 20px;
-    background-color: rgba(255, 255, 255);
-    color: #fff;
-  }
-  .bannercontainer {
-    border: 0px solid blue;
-    
-    padding: 20px;
-    height: 375px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255);
-    color: #fff;
-  }
-  
-  
-  .art-cont>div{
-    position:relative;
-    margin: 0 40px;
-  
-    /* padding: 10px; */
-    display: flex;
-  }
-  .logo  {
-    
-    background: url("https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/logo.png?raw=true");
-    opacity: 1;
-    background-size: cover ;
-    object-fit: scale-down;
-    width: 200px;
-    height: 70px;
-    display: flex;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
-  
-  .gallery-links {
-    display:inline-flex;
-    max-width: 1200px;
-  }
-  
-  .nav-links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 20px;
-    padding: 20 px;
-    opacity: 1;
-    text-align: left;
-  }
-  .nav-links a:hover {
-        color: black;
-      }
-  
-  .search-box{
-      position: absolute;
-      left:75%;
-      top: 6.5%;
-      max-height: 30px;
-      max-width: 60px;
-      width: 33.333%;
-      display: inline-flex;
-      text-align: center;
-      align-items: center;
-  }
-  
-  .search-box input[type="text"] {
-    padding: 6px 20px;
-    border: 1px;
-    border-color: black;
-    border-radius: 4px;
-    font-size: 16px;
-    display: relative;
-    top:10px;
-  }
-  
-  .search-box button[type="submit"] {
-    border: grey;
-    border-radius: 4px;
-    font-size: 16px;
-    background: linear-gradient(120deg, #5e8067, rgb(169, 169, 224));
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: relative;
-    top:10px;
-  }
-  
-  /* .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-  }
-  
-  .hamburger-menu span {
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-  } */
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-    }
-  
-    .nav-links a {
-      margin: 10px 0;
-    }
-  
-    .hamburger-menu {
-      display: flex;
-    }
-  }
-  
-  body 
-  {
-  margin: 0px;
-  }
-  
-  
-  .bannerbar {
-    /* UNDER-BANNER BAR */
-    width: 100%;
-    height: 49px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: absolute;
-    top: 494px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .banner {
-    /* BANNER IMAGE */
-    width: 100%;
-    height: 382px;
-    background: url("https://images.squarespace-cdn.com/content/v1/57c7ad5bcd0f68f5c730e9e8/1531032447603-COFFXDAUPSULNJPABI7C/banner2_comp.jpg?format=1500w");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover ;
-    opacity: 1;
-    position: absolute;
-    top: 112px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .bannertext {
-    width: 100%;
-    color: #5e8067;
-    position: absolute;
-    top: 507px;
-    left: 0px;
-    font-family: Inter;
-    font-weight: Light;
-    font-size: 19px;
-    opacity: 1;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
-  }
-  .articles {
-    display: block;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .article {
-    width: 30%;
-    margin-bottom: 30px;
-  }
-  
-  .img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .h2 {
-    margin: 10px 0;
-    font-size: 24px;
-  }
-  .articlecontainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 550px;
-    background: url("https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/articlesbg.png?raw=true") ;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    left: 0px;
-    overflow: hidden;
-  }
-  
-  .art1 {
-    width: 313px;
-    height: 236px;
-    position: relative;
-    left:10%;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    overflow: hidden;
-  }
-  .art1frame {
-    width: 313px;
-    height: 190px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: relative;
-    left:10%;
-    overflow: hidden;
-  }
-  
-  .articletitle {
-    width: 266px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 7.5%;
-    left: 5%;
-    font-family: Inter;
-    font-weight: Light;
-    font-size: 20px;
-    opacity: 1;
-    text-align: left;
-  }
-  .articlesubtitle {
-    width: 266px;
-    color: rgba(1, 1, 1, 0.502);
-    position: absolute;
-    top: 65%;
-    left: 6%;
-    font-family: Inter;
-    font-weight: Thin;
-    font-size: 15px;
-    opacity: 1;
-    text-align: left;
-  }
-  .art2 {
-    width: 313px;
-    height: 236px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: relative;
-    left:10%;
-    overflow: hidden;
-  }
-  .art2frame {
-    width: 313px;
-    height: 190px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: relative;
-    left:10%;
-    overflow: hidden;
-  }
-  .art3 {
-    width: 313px;
-    height: 236px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: relative;
-    left:10%;
-    overflow: hidden;
-  }
-  .art3frame {
-    width: 313px;
-    height: 190px;
-    background: rgba(217,217,217,1);
-    opacity: 1;
-    position: relative;
-    left:10%;
-    overflow: hidden;
-  }
-  
-  .readnow {
-    width: 99px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 8%;
-    left: 12%;
-    font-family: Inter;
-    font-weight: Semi Bold;
-    font-size: 16px;
-    opacity: 1;
-  }
-  
-  .morearticles { 
-    max-width: 200px;
-    font-family: Inter;
-    font-weight: Semi Bold;
-    font-size: 16px;
-    top:45%;
-    right:10%;
-    position: relative;
-    color: rgba(255,255,255,1);
-  
-  }
-  
-  .v43_345 {
-    width: 99px;
-    height: 27px;
-    background: url("../images/v43_345.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    box-shadow: 0px 3.3862433433532715px 3px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-  }
-  
-  .readnowbutton {
-    width: 99px;
-    height: 27px;
-    background: linear-gradient(130deg, #5e8067, palevioletred);
-    opacity: 1;
-    position: absolute;
-    top: 75%;
-    left: 5%;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    overflow: hidden;
-  }
-  
-  /* box classes are article thumbnails */
-  .box3 {
-      width: 100%;
-      height: 100%;
-      border: 0px solid rgba(255, 217, 0, 0);
-      background-image: url("https://scx2.b-cdn.net/gfx/news/hires/2023/special-drone-collects-1.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-  }
-  .box2 {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background-image: url("https://www.llnl.gov/sites/www/files/styles/scaled_425h/public/2022-12/GreenlandEcosystem_875x500px.jpg?itok=J2JPbnJq");
-      background-size: cover; 
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-  }
-  .box1 {
-      width: 100%;
-      height: 100%;
-      border: 0px solid rgba(255, 217, 0, 0);
-      background-image: url("https://www.science.org/do/10.1126/science.abl5425/full/eDNA_1280x720.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%; 
-  }
-  .footer {
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    height: 221px;
-    
-    background: rgba(51,47,47,1);
-    opacity: 1;
-    left: 0px;
-    overflow: hidden;
-  }
-  .footertext {
-    color: rgb(67, 69, 67);
-    top:70%;
-    width: 100%;
-    position:relative;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 20px;
-    opacity: 1;
-    text-align: center;
-  }
-  
-  
-  
-  
-  
-  
-  </style>
