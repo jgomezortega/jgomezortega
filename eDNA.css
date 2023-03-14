@@ -77,42 +77,42 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
   }
   
   nav a:nth-child(2):before {
-    background-color: #00e2ff;
+    background-color: #033047;
   }
   
   nav a:nth-child(2):after {
-    background-color: #89ff00;
+    background-color: #41a984;
   }
   
   nav a:nth-child(3):before {
-    background-color: purple;
+    background-color: #033047;
   }
   
   nav a:nth-child(3):after {
-    background-color: palevioletred;
+    background-color: #41a984;
   }
   
   nav a:nth-child(4):before {
-    background-color: purple;
+    background-color: #033047;
   }
   
   nav a:nth-child(4):after {
-    background-color: palevioletred;
+    background-color: #41a984;
   }
   nav a:nth-child(5):before {
-    background-color: purple;
+    background-color: #033047;
   }
   
   nav a:nth-child(5):after {
-    background-color: palevioletred;
+    background-color: #41a984;
   }
   
   nav a:nth-child(6):before {
-    background-color: purple;
+    background-color: #033047;
   }
   
   nav a:nth-child(6):after {
-    background-color: palevioletred;
+    background-color: #41a984;
   }
   
   
@@ -143,26 +143,26 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
   
   nav a:nth-child(2):hover ~ #indicator {
     left: 20%;
-    background: linear-gradient(130deg, #00e2ff, #89ff00);
+    background: linear-gradient(130deg, #033047, #41a984);
   }
   
   nav a:nth-child(3):hover ~ #indicator {
     left: 28.75%;
-    background: linear-gradient(130deg, purple, palevioletred);
+    background: linear-gradient(130deg, #033047, #41a984);
   }
   
   nav a:nth-child(4):hover ~ #indicator {
     left: 38.4%;
-    background: linear-gradient(130deg, purple, palevioletred);
+    background: linear-gradient(130deg, #033047, #41a984);
   }
   
   nav a:nth-child(5):hover ~ #indicator {
     left: 51.425%;
-    background: linear-gradient(130deg, purple, palevioletred);
+    background: linear-gradient(130deg, #033047, #41a984);
   }
   nav a:nth-child(6):hover ~ #indicator {
     left: 63.25%;
-    background: linear-gradient(130deg, purple, palevioletred);
+    background: linear-gradient(130deg, #033047, #41a984);
   }
   
     section.wrapper {
@@ -205,7 +205,7 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
     scroll-snap-align: center;
     display: inline-block;
     border-radius: 3px;
-    font-size: 0;
+    font-size: 24px;
     overflow: hidden;
     object-fit: fill;
   }
@@ -222,11 +222,9 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
     border: 0px solid blue;
     
     padding: 20px;
-    height: 375px;
+    height: 382px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    padding: 0px;
     background-color: rgba(255, 255, 255);
     color: #fff;
   }
@@ -358,14 +356,13 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
   
   .bannerbar {
     /* UNDER-BANNER BAR */
-    width: 100%;
-    height: 49px;
-    background: rgba(217,217,217,1);
+    max-width: 100%;
+    height: fit-content;
+    background: linear-gradient(130deg, #d3c8b3 2%, #41a984 7%,#048078 20%,#045767 55%, #044464 70%, #033047 90%);
     opacity: 1;
-    position: absolute;
-    top: 494px;
-    left: 0px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   .banner {
     /* BANNER IMAGE */
@@ -376,25 +373,26 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
     background-position: center center;
     background-size: cover ;
     opacity: 1;
-    position: absolute;
-    top: 112px;
-    left: 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    margin: 0px;
+    padding: 0px;
   }
   .bannertext {
     width: 100%;
-    color: #5e8067;
-    position: absolute;
-    top: 507px;
-    left: 0px;
+    color: whitesmoke;
+    position: relative;
     font-family: Inter;
     font-weight: Light;
     font-size: 19px;
     opacity: 1;
+    padding: 10px;
     text-align: center;
   }
   
-  .container {
+  .containerC {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -405,6 +403,282 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
     font-size: 14px;
     color: #333;
   }
+/* CSS */
+.button-62 {
+  position: relative;
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: relative;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 20px;
+  text-align: center;
+  transition: all 0.5s;
+  white-space: nowrap;
+}
+.button-62 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-62 span:after {
+  content: ' \00bb';
+  position: relative;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.5s;
+}
+
+.button-62:hover span {
+  padding-right: -1px;
+}
+
+.button-62:hover span:after {
+  opacity: 1;
+  right: 5;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+:root{
+  /* color type A */
+  --line_color : #e1e1e1 ;
+  --back_color : #048078f2  ;
+  /* linear-gradient(#41a984 10%,#048078 30%,#045767 55%) */
+}
+
+.buttonscribble{
+  position : relative ;
+  z-index : 0 ;
+  width : 240px ;
+  height : 56px ;
+  margin-left: 40px;
+  margin-top: 250px;
+  text-decoration : none ;
+  font-size : 14px ; 
+  font-weight : bold ;
+  color : var(--line_color) ;
+  letter-spacing : 2px ;
+  transition : all .3s ease ;
+}
+.button__text{
+  display : flex ;
+  justify-content : center ;
+  align-items : center ;
+  width : 100% ;
+  height : 100% ;
+}
+.buttonscribble::before,
+.buttonscribble::after,
+.button__text::before,
+.button__text::after{
+  content : '' ;
+  position : absolute ;
+  height : 3px ;
+  border-radius : 2px ;
+  background : var(--line_color) ;
+  transition : all .5s ease ;
+}
+.buttonscribble::before{
+  top : 0 ;
+  left : 54px ;
+  width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.buttonscribble::after{
+  top : 0 ;
+  right : 54px ;
+  width : 8px ;
+}
+.button__text::before{
+  bottom : 0 ;
+  right : 54px ;
+  width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__text::after{
+  bottom : 0 ;
+  left : 54px ;
+  width : 8px ;
+}
+.button__line{
+  position : absolute ;
+  top : 0 ;
+  width : 56px ;
+  height : 100% ;
+  overflow : hidden ;
+}
+.button__line::before{
+  content : '' ;
+  position : absolute ;
+  top : 0 ;
+  width : 150% ;
+  height : 100% ;
+  box-sizing : border-box ;
+  border-radius : 300px ;
+  border : solid 3px var(--line_color) ;
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before{
+  left : 0 ;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before{
+  right : 0 ;
+}
+.buttonsribble:hover{
+  letter-spacing : 6px ;
+}
+.buttonscribble:hover::before,
+.buttonscribble:hover .button__text::before{
+  width : 8px ;
+}
+.buttonscribble:hover::after,
+.buttonscribble:hover .button__text::after{
+  width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__drow1,
+.button__drow2{
+  position : absolute ;
+  z-index : -1 ;
+  border-radius : 16px ;
+  transform-origin : 16px 16px ;
+}
+.button__drow1{
+  top : -16px ;
+  left : 40px ;
+  width : 32px ;
+  height : 0;
+  transform : rotate( 30deg ) ;
+}
+.button__drow2{
+  top : 44px ;
+  left : 77px ;
+  width : 32px ;
+  height : 0 ;
+  transform : rotate(-127deg ) ;
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after{
+  content : '' ;
+  position : absolute ;
+}
+.button__drow1::before{
+  bottom : 0 ;
+  left : 0 ;
+  width : 0 ;
+  height : 32px ;
+  border-radius : 16px ;
+  transform-origin : 16px 16px ;
+  transform : rotate( -60deg ) ;
+}
+.button__drow1::after{
+  top : -10px ;
+  left : 45px ;
+  width : 0 ;
+  height : 32px ;
+  border-radius : 16px ;
+  transform-origin : 16px 16px ;
+  transform : rotate( 69deg ) ;
+}
+.button__drow2::before{
+  bottom : 0 ;
+  left : 0 ;
+  width : 0 ;
+  height : 32px ;
+  border-radius : 16px ;
+  transform-origin : 16px 16px ;
+  transform : rotate( -146deg ) ;
+}
+.button__drow2::after{
+  bottom : 26px ;
+  left : -40px ;
+  width : 0 ;
+  height : 32px ;
+  border-radius : 16px ;
+  transform-origin : 16px 16px ;
+  transform : rotate( -262deg ) ;
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after{
+  background : var( --back_color ) ;
+}
+.buttonscribble:hover .button__drow1{
+  animation : drow1 ease-in .06s ;
+  animation-fill-mode : forwards ;
+}
+.buttonscribble:hover .button__drow1::before{
+  animation : drow2 linear .08s .06s ;
+  animation-fill-mode : forwards ;
+}
+.buttonscribble:hover .button__drow1::after{
+  animation : drow3 linear .03s .14s ;
+  animation-fill-mode : forwards ;
+}
+.buttonscribble:hover .button__drow2{
+  animation : drow4 linear .06s .2s ;
+  animation-fill-mode : forwards ;
+}
+.buttonscribble:hover .button__drow2::before{
+  animation : drow3 linear .03s .26s ;
+  animation-fill-mode : forwards ;
+}
+.buttonscribble:hover .button__drow2::after{
+  animation : drow5 linear .06s .32s ;
+  animation-fill-mode : forwards ;
+}
+@keyframes drow1{
+  0%   { height : 0 ; }
+  100% { height : 100px ; }
+}
+@keyframes drow2{
+  0%   { width : 0 ; opacity : 0 ;}
+  10%  { opacity : 0 ;}
+  11%  { opacity : 1 ;}
+  100% { width : 120px ; }
+}
+@keyframes drow3{
+  0%   { width : 0 ; }
+  100% { width : 80px ; }
+}
+@keyframes drow4{
+  0%   { height : 0 ; }
+  100% { height : 120px ; }
+}
+@keyframes drow5{
+  0%   { width : 0 ; }
+  100% { width : 124px ; }
+}
+
+.scribble{
+  width : fit-content ;
+  height : 300px ;
+  display : flex ;
+  flex-direction : column ;
+  justify-content : center ;
+  align-items : center ;
+}
 
   /*  INFO
   .-./`) ,---.   .--. ________     ,-----.     
@@ -418,7 +692,13 @@ http://patorjk.com/software/taag/#p=display&v=0&f=Flower%20Power&t=
  '---' '--'    '--''---'         '-----'     
                                               */
                                                
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+/* @import url(//fonts.googleapis.com/css?family=Lato:300:400); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+
+ */
 
 body {
   margin:0;
@@ -523,13 +803,115 @@ p {
     font-size:24px;
   }
 }
+.haze{
+  display: inline-flex;
+  flex-direction: row;
+  float: left;
+}
+.hazetext {
+  font-family: 'Lato', sans-serif;
+  max-width: 700px;
+  color: #044464;
+  display: inline-flex;
+  flex-direction: row;
+  float: left;
+  background-color: rgba(245, 245, 245, 0);
+  padding: 10px;
+  padding-top: 50px;
+  margin: 10px;
+}
+
+.hazeh2 {
+  font-family: 'Lato', sans-serif;
+  color: #044464;
+  padding-left: 3%;
+  width: 600px;
+
+}
+
+.dot {
+  height: 8rem;
+  width: 8rem;
+  min-width: 5.75rem;
+  min-height: 5.75rem;
+  background-color: rgba(65, 169, 133, 0.0625) ;
+  border-radius: 50%;
+  border: #048078;
+  border-width: 5px;
+    float: left;
+    align-items: center;
+  justify-content: center;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.dot img {
+  align-items: center;
+ 
+}
   
+.circle { 
+  width: 15.75rem;
+  height: 15.75rem;
+  min-width: 7.75rem;
+  min-height: 7.75rem;
+  border-radius: 10%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(230, 236, 240);
+  padding: 1.25rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.infosection {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  flex-direction: column;
+  padding: .5rem .5rem .5rem .5rem;
+  width: 44vw;
+  margin: 10px 10px;
+  margin-left: 45px;
+  margin-bottom: 45px;
+}
+
+.infocard { 
+  vertical-align: top;
+  display: float;
+}
 
 
+.infotitle {
+  display: flex;
+  vertical-align: top;
+  font-size: 1.5rem;
+  line-height: 36px;
+  font-weight: 700;
+  color: rgb(5, 63, 104);
+  float: left;
+  padding: 10px;
+  padding-left: 40px;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+}
+.infosubtitle {
+  max-width: 300px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-bottom: 0px;
+  display: flex;
+  position: relative;
+  vertical-align: top;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: rgb(5, 63, 104);
+  float: left;
+  flex-direction: column;
 
-  
 
-
+}
 
 
   /* ARTICLES
@@ -563,13 +945,13 @@ p {
   
   .h2 {
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 48px;
   }
   .articlecontainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
     height: 550px;
     background: url("https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/articlesbg.png?raw=true") ;
     background-repeat: no-repeat;
