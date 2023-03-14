@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="eDNA.css">
   <link rel="stylesheet" type="text/css" href="test.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 
   <link rel="icon" type="image/x-icon" href="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/favicon.png?raw=true">
 </head>
@@ -16,192 +17,142 @@
       <a href="about.html">ABOUT</a>
       <a href="resources.html">RESOURCES</a>
       <a href="projects.html">PROJECTS</a>
-      <a href="https://ucedna.com/">CALeDNA</a>
+      <a href="https://ucedna.com/" target="_blank" rel="noopener noreferrer">CALeDNA</a>
       <div id="indicator"></div>
-      <div class="search-box">
+      <!-- <div class="search-box">
         <input type="text" placeholder="Search...">
-      <button type="submit">GO</button>
+      <button type="submit">GO</button> -->
 
       </div>
       </div>
     </div>
     <div class="hamburger-menu">
-      <span></span>
-      <span></span>
     </div>
   </nav>
 
     <div class="bannercontainer">
-      
-      <div class="bannerbar">
-      </div>
-      <div class="bannertext">Become a CALeDNA Scientist: Explore your local ecosystems and contribute to the University of California’s community eDNA project </div>
-      <div class="banner"></div>
-    </div>
- 
-    <div class="container" id="container">
-      <div class="caption" id="slider-caption">
-          <div class="caption-heading">
-              <h1>Lorem Ipsum</h1>
+      <div class="banner">
+        <div class="scribble" style="left: 100px; top: 40px">
+            <a href="#" class="buttonscribble">
+              <div class="button__line"></div>
+              <div class="button__line"></div>
+              <span class="button__text">Explore Projects</span>
+              <div class="button__drow1"></div>
+              <div class="button__drow2"></div>
+            </a>
           </div>
-          <div class="caption-subhead"><span>A study on invasive species and environmental factors at play</span></div><a class="btn" href="#">Sit Amet</a>
-      </div>
-      <div class="left-col" id="left-col">
-          <div id="left-slider"></div>
-      </div>
-      <ul class="navslide">
-          <li class="slide-up"> <a href="#">
-                  </a>
-          </li>
-          <li class="slide-down"> <a id="down_button" href="#">></a></li>
-      </ul>
-    <script>
-      let slide_data = [
-  {
-    'src':'https://rare-gallery.com/uploads/posts/789847-Russian-River-Healdsburg-USA-Autumn-Rivers-Forests.jpg',
-    'title':'Russian River Project',
-    'copy':'A study on invasive species and environmental factors at play'
-  },
-  {
-    'src':'https://media.zenfs.com/en-US/best_life_342/3547fb09e6acab21e34ab8fe2591f17d', 
-    'title':'Dung Beetles',
-    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
-  },
-  {
-    'src':'https://wallpapercave.com/wp/wp2269709.jpg', 
-    'title':'Honey Bees',
-    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
-  },
-  {
-    'src':'https://media.istockphoto.com/id/1303715071/vector/dna-gel-run-abstract-background.jpg?s=612x612&w=0&k=20&c=B3Qc-0Ew1Th0bC07S4Fd47kDsNkySE9qa2Xi_O9o77M=', 
-    'title':'View All Projects',
-    'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
-  },
-  
-];
-let slides = [],
-  captions = [];
+      </div></div>
+    <div class="bannerbar">
+      <span class="bannertext" style="vertical-align: bottom; ">
+        Become a CALeDNA Scientist: Explore your local ecosystems and contribute to the University of California’s community eDNA project </span>
+    </div>
 
-let autoplay = setInterval(function(){
-  nextSlide();
-},5000);
-let container = document.getElementById('container');
-let leftSlider = document.getElementById('left-col');
-// console.log(leftSlider);
-let down_button = document.getElementById('down_button');
-// let caption = document.getElementById('slider-caption');
-// let caption_heading = caption.querySelector('caption-heading');
+  <section>
+    <div class="containercara">
+        <div class="carousel" >
+            <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+            <ul class="carousel__slides">
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide1.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            RUSSIAN RIVER PROJECT
+                            <div class="caption"> A analysis of the Russian River Ecosystem in Northern California. Data collected by the Meyer Lab and analyzed by Biomolecular Engineering</div>
+                            <span class="credit">UCSC EEB & BME</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide2.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit" style="font-family: 'Lato', sans-serif; color: #044464;">Lorem ipsum dolor sit amet</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide3.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit"> Credit Line </span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide4.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit"> Credit Line </span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide5.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit"> Credit Line </span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide6.png?raw=true" alt="">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit"> Credit Line </span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>    
+            <ul class="carousel__thumbnails">
+                <li>
+                    <label for="slide-1"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide1.png?raw=true" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-2"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide2.png?raw=true" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-3"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide3.png?raw=true" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-4"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide4.png?raw=true" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-5"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide5.png?raw=true" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-6"><img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/slide6.png?raw=true" alt=""></label>
+                </li>
+            </ul>
+        </div>
+        <button class="button-62" role="button" style="top:75%; left: 40%; width: fit-content ; height: fit-content; font-size: small ;"><span>View All Projects</span></button>   
 
-down_button.addEventListener('click',function(e){
-  e.preventDefault();
-  clearInterval(autoplay);
-  nextSlide();
-  autoplay;
-});
+    </div>
 
-for (let i = 0; i< slide_data.length; i++){
-  let slide = document.createElement('div'),
-      caption = document.createElement('div'),
-      slide_title = document.createElement('div');
-    
-  slide.classList.add('slide');
-  slide.setAttribute('style','background:url('+slide_data[i].src+')');
-  caption.classList.add('caption');
-  slide_title.classList.add('caption-heading');
-  slide_title.innerHTML = '<h1>'+slide_data[i].title+'</h1>';
-  
-  switch(i){
-    case 0:
-        slide.classList.add('current');
-        caption.classList.add('current-caption');
-        break;
-    case 1:
-        slide.classList.add('next');
-        caption.classList.add('next-caption');
-        break;
-    case slide_data.length -1:
-      slide.classList.add('previous');
-      caption.classList.add('previous-caption');
-      break;
-    default:
-       break;       
-  }
-  caption.appendChild(slide_title);
-  caption.insertAdjacentHTML('beforeend','<div class="caption-subhead"><span></span></div>');
-  slides.push(slide);
-  captions.push(caption);
-  leftSlider.appendChild(slide);
-  container.appendChild(caption);
-}
-// console.log(slides);
-
-function nextSlide(){
-  // caption.classList.add('offscreen');
-  
-  slides[0].classList.remove('current');
-  slides[0].classList.add('previous','change');
-  slides[1].classList.remove('next');
-  slides[1].classList.add('current');
-  slides[2].classList.add('next');
-  let last = slides.length -1;
-  slides[last].classList.remove('previous');
-  
-  captions[0].classList.remove('current-caption');
-  captions[0].classList.add('previous-caption','change');
-  captions[1].classList.remove('next-caption');
-  captions[1].classList.add('current-caption');
-  captions[2].classList.add('next-caption');
-  let last_caption = captions.length -1;
-  
-  // console.log(last);
-  captions[last].classList.remove('previous-caption');
-  
-  let placeholder = slides.shift();
-  let captions_placeholder = captions.shift();
-  slides.push(placeholder); 
-  captions.push(captions_placeholder);
-}
-
-let heading = document.querySelector('.caption-heading');
+</section>
 
 
-// https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
-function whichTransitionEvent(){
-  var t,
-      el = document.createElement("fakeelement");
-
-  var transitions = {
-    "transition"      : "transitionend",
-    "OTransition"     : "oTransitionEnd",
-    "MozTransition"   : "transitionend",
-    "WebkitTransition": "webkitTransitionEnd"
-  }
-
-  for (t in transitions){
-    if (el.style[t] !== undefined){
-      return transitions[t];
-    }
-  }
-}
-
-var transitionEvent = whichTransitionEvent()
-caption.addEventListener(transitionEvent, customFunction);
-
-function customFunction(event) {
-  caption.removeEventListener(transitionEvent, customFunction);
-  console.log('animation ended');
-
-  // Do something when the transition ends
-}
-
-
-
-    </script>
-  </div>
-
-
-<!--Hey! This is the original version
-of Simple CSS Waves-->
 
 <div class="header">
 
@@ -209,7 +160,8 @@ of Simple CSS Waves-->
   <div class="inner-header flex">
   <!--Just the logo.. Don't mind this-->
   
-  <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+  <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+  font-family: Verdana, Geneva, Tahoma, sans-serif;>
   WHAT IS ENVIRONMENTAL DNA?</h1>
   </div>
   
@@ -228,76 +180,114 @@ of Simple CSS Waves-->
   </g>
   </svg>
   </div>
-  <!--Waves end-->
-  
   </div>
-  <!--Header ends-->
-  
-  <!--Content starts-->
+
+  <div class="container" id="infobox">
+    <div class="wrapper" style="position: relative; height: 300px; left:5%; max-width: 100%;">
+        <img class="haze" style="width: 40vh; height: 40vh; content: cover;" src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/haze.png?raw=true" 
+        alt="eDNA set up pic">
+    
+        <span class="hazetext">When an organism, such as a fish, moves through the environment it is constantly shedding bits of itself, like dead skin cells, mucus, or faeces into its surroundings. The DNA in this organic matter is known as environmental DNA (eDNA). If someone tested a sample of the water, these pieces of DNA could indicate the recent presence of the fish, even if no fish is seen. This advance in the use of DNA sequencing technology can be applied to a whole range of environments, not just aquatic ecosystems. It allows researchers to build up a far more detailed image of which species live in the environment than by simply identifying species on sight,  expanding the possibilities of ecology. </span>
+    </div>
+    <div class="info" style="align-content: center;">
+        <div class="infosection">
+        <span class="dot">
+            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon1.png?raw=true" alt="">
+        </span>
+        <div class="infocard">
+            <div class="infotitle">Rare Species Monitoring</div>
+            <div class="infosubtitle">Able to uncover species by ultrasenstive detection, rare and elusive species can be monitored with eDNA easier than ever before</div></div></div>
+            <div class="infosection">
+            <span class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon2.png?raw=true" alt="">
+            </span>
+            <span class="infotitle">Pathogen detection</span>
+            <span class="infosubtitle">eDNA biomonitoring can be used to protect ecosystems with microbial studies. Able to detect pathogens quickly for ecological protection</span></div>
+            <div class="infosection">
+            <span class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon3.png?raw=true" alt="">
+            </span>
+            <span class="infotitle">Sequence entire ecosystems</span>
+            <span class="infosubtitle">Powered by Next-Generation-Sequencing, ecologists can snapshot entire ecosytems in just a few samples</span></div>
+            <div class="infosection">
+            <span class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon4.png?raw=true" alt="">
+            </span>
+            <span class="infotitle">Uncovering ancient ecosystems</span>
+            <span class="infosubtitle">An emergent application of eDNA, anthropologists conduct paleobiological study of ancient environmental DNA to peek back in time</span></div>
+    </div>
+
+    <h2 class="hazeh2">What does the eDNA workflow look like?</h2>
+    <div></div>
+    <div class="info" style="align-content: center;">
+        <div class="infosection">
+        <span class="dot">
+            <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon5.png?raw=true" alt="">
+        </span>
+        <div class="infocard">
+            <div class="infotitle">1. Collecting the sample</div>
+            <div class="infosubtitle">It all starts with a sample. Whether it be water, soil, or some other medium, eDNA begins with samples from an area of study</div></div></div>
+            <div class="infosection">
+            <span class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon6.png?raw=true" alt="">
+            </span>
+            <span class="infotitle">2. Extracting the DNA</span>
+            <span class="infosubtitle">Scientists will then seperate the DNA from within a sample through a variety of lab techniques to create purified DNA</span></div>
+            <div class="infosection">
+            <span class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon7.png?raw=true" alt="">
+            </span>
+            <span class="infotitle">3. Sequencing for species</span>
+            <span class="infosubtitle">Running the extracted DNA using high-throughput sequencing allows for the environmental DNA to be ready for computational analysis</span></div>
+            <div class="infosection">
+            <div class="dot">
+                <img src="https://github.com/jgomezortega/jgomezortega/blob/main/docs/assets/icon8.png?raw=true" alt="">
+            </div>
+            <span class="infotitle">4. Analyzing the Data</span>
+            <span class="infosubtitle">DNA assembly and other bioinformatic measures ultimately end in a huge data set for scientists to study</span></div>
+    </div>
   </div> 
   
-  <h2>The eDNA Workflow</h2>
-  <h3></h3>
-  <div class="container" id="workflow">
-    <div class="boxinfo">
-      <img src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto/https://www.gcu.edu/sites/default/files/media/images/Blog/medical-studies-sciences/environmental_scientist.jpg">
-      <span style="font-size: 18px;">Sample Collection</span>
-    </div>
-    <div class="boxinfo">
-      <img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F9d10c8aa-36da-11ea-ac3c-f68c10993b04?fit=scale-down&source=next&width=700">
-      <span style="font-size: 18px;">Extraction & Metabarcoding</span>
-    </div>
-    <div class="boxinfo">
-      <img src="https://hudsonrobotics.com/wp-content/uploads/2021/05/Next-Generation-Sequencing-Methods-101.jpg">
-      <span style="font-size: 16px;">DNA Sequencing & Identification</span>
-    </div>
-    <div class="boxinfo">
-      <img src="https://www.cell.com/cms/attachment/941586e7-727a-4ad8-8369-53867697da90/gr1_lrg.jpg">
-      <span style="font-size: 18px;">Ecological Analysis</span>
-    </div>
-  </div>
-  <!--Content ends-->
     
+
+  
+  
+     
 <div class="articlecontainer">
   <div class="art-cont">
       <div class="art1frame">
-        <img class=box1></div>
-  
-      <div class="art1">
+      <img class=box1 style="box-shadow: 0 20px 30px #00000080;"></div>
+      <div class="art1" style="box-shadow: 0 20px 30px rgba(0,0,0,.5);">
+        <button class="button-62" role="button" style="top:75%; left: 5%; width: fit-content ; height: fit-content; font-size: small ;"><span>Read now</span></button>   
         <span class="articletitle">DNA pulled from thin air identifies nearby animals: “Insane” idea tags dozens of zoo species</span>
         <span class="articlesubtitle">SCIENCE | 20 JUL 2021</span>
-        <div class="readnowbutton">
-            <span class="readnow"><a style="color:inherit; font-size:inherit; text-decoration: none;" href="https://www.science.org/content/article/dna-pulled-thin-air-identifies-nearby-animals#:~:text=The%20team%20identified%2017%20species,fed%20to%20captive%20predators%20indoors.">Read now </a></div></span>
-          </div>
+                </div>
       </div>
 
       <div class="art-cont">
-        <div class="art2frame">
-        <img class=box2></div>
-        <div class="art2">
-         <span class="articletitle">Environmental DNA uncovers a 2-million-year-old ecosystem in Greenland</span>
+        <div class="art2frame" style="box-shadow: 0 20px 30px rgba(0,0,0,.5);">
+        <img class=box2 style="box-shadow: 0 20px 30px rgba(0,0,0,.5);"></div>
+        <div class=art2 style="box-shadow: 0 20px 30px rgba(0,0,0,.5);">
+          <button class="button-62" role="button" style="top:75%; left: 5%; width: fit-content ; height: fit-content; font-size: small ;"><span>Read now</span></button>   
+          <span class="articletitle">Environmental DNA uncovers a 2-million-year-old ecosystem in Greenland</span>
           <span class="articlesubtitle">NATURE | 18 Jan 2023</span>
-          <div class="readnowbutton">
-            <span class="readnow"><a style="color:inherit; font-size:inherit; text-decoration:none;" href="https://www.nature.com/articles/s41586-022-05453-y">Read now </a></div></span>
-        </div>
+        </div> 
       </div>
       <div class="art-cont">
       <div class="art3frame">
          <img class=box3></div>
-      <div class="art3">
-        <div class="readnowbutton">
-            <span class="readnow"><a style="color:inherit; font-size:inherit; text-decoration:none;" href="https://www.science.org/doi/10.1126/scirobotics.add5762">Read now </a></div></span>
-            
-      <span class="articletitle">Drone-assisted collection of environmental DNA from tree branches for biodiversity monitoring</span>
+      <div class="art3" style="box-shadow: 0 20px 30px rgba(0,0,0,.5);">
+        <button class="button-62" role="button" style="top:75%; left: 5%; width: fit-content ; height: fit-content; font-size: small ;"><span>Read now</span></button>   
+        <span class="articletitle">Drone-assisted collection of environmental DNA from tree branches for biodiversity monitoring</span>
       <span class="articlesubtitle">SCIENCE ROBOTICS | 18 Jan 2023</span>
       </div></div>
       <div class="morearticles">
-        <span><a style="color:inherit; font-size:12px; text-decoration: underline; font-family: Verdana, Geneva, Tahoma, sans-serif;" href="articles.html"> MORE ARTICLES  </a></div></span>
+        <span><a style="color:inherit; font-size:12px; text-decoration: underline; font-family: 'Lato', sans-serif; color: #EF4765;" href="articles.html"> MORE ARTICLES  </a></div></span>
       </div>
 
     </div>
 
-
+   
       <div class="footer">
         <span class="footertext">2023 | UCSC Biomolecular Engineering & Bioinformatics</span>
         <span class="footertext" target="_blank" href="https://icons8.com/icon/85Rt3ZMxKJJ0/dna">Dna</a> icon by <a target="_blank" href="https://icons8.com">Icons8</span>
