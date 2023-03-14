@@ -1,685 +1,190 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
-body {
-  background: rgba(236, 243, 243, 0);
-}
-
-.particle {
+@mixin aspect-ratio($width, $height) {
   position: relative;
-  border-radius: 50%;
-}
-
-@keyframes particle-animation-1 {
-  100% {
-    transform: translate3d(74vw, 22vh, 50px);
+    
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+    
+  > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
   }
 }
-.particle:nth-child(1) {
-  animation: particle-animation-1 60s infinite;
-  opacity: 0.29;
-  height: 10px;
-  width: 10px;
-  animation-delay: -0.2s;
-  transform: translate3d(90vw, 60vh, 4px);
-  background: hsl(108, 70%, 50%);
+
+// Styling
+
+section {
+    background: rgb(230, 229, 229);
+    padding: 50px 0;
 }
 
-@keyframes particle-animation-2 {
-  100% {
-    transform: translate3d(28vw, 3vh, 22px);
-  }
-}
-.particle:nth-child(2) {
-  animation: particle-animation-2 60s infinite;
-  opacity: 0.4;
-  height: 6px;
-  width: 6px;
-  animation-delay: -0.4s;
-  transform: translate3d(24vw, 45vh, 20px);
-  background: hsl(249, 70%, 50%);
+.containercara {
+    max-width: 1044px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-@keyframes particle-animation-3 {
-  100% {
-    transform: translate3d(86vw, 75vh, 25px);
-  }
-}
-.particle:nth-child(3) {
-  animation: particle-animation-3 60s infinite;
-  opacity: 0.52;
-  height: 6px;
-  width: 6px;
-  animation-delay: -0.6s;
-  transform: translate3d(55vw, 46vh, 21px);
-  background: hsl(123, 70%, 50%);
-}
-
-@keyframes particle-animation-4 {
-  100% {
-    transform: translate3d(56vw, 58vh, 50px);
-  }
-}
-.particle:nth-child(4) {
-  animation: particle-animation-4 60s infinite;
-  opacity: 0.84;
-  height: 7px;
-  width: 7px;
-  animation-delay: -0.8s;
-  transform: translate3d(20vw, 89vh, 78px);
-  background: hsl(65, 70%, 50%);
-}
-
-@keyframes particle-animation-5 {
-  100% {
-    transform: translate3d(8vw, 76vh, 94px);
-  }
-}
-.particle:nth-child(5) {
-  animation: particle-animation-5 60s infinite;
-  opacity: 0.08;
-  height: 8px;
-  width: 8px;
-  animation-delay: -1s;
-  transform: translate3d(52vw, 38vh, 6px);
-  background: hsl(329, 70%, 50%);
+.carousel {
+    display: block;
+    text-align: left;
+    position: relative;
+    margin-bottom: 22px;
+    
+    > input {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        
+        &:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -500%; }
+        &:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -400%; }
+        &:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -300%; }
+        &:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -200%; }
+        &:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: -100%; }
+        &:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type { margin-left: 0%; }
+        
+        &:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1) { box-shadow: 0px 0px 0px 5px #044464; }
+        &:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2) { box-shadow: 0px 0px 0px 5px #045767; }
+        &:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3) { box-shadow: 0px 0px 0px 5px #048078; }
+        &:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4) { box-shadow: 0px 0px 0px 5px #41a984; }
+        &:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5) { box-shadow: 0px 0px 0px 5px #41a984; }
+        &:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) { box-shadow: 0px 0px 0px 5px #48a585; }
+    }
 }
 
-@keyframes particle-animation-6 {
-  100% {
-    transform: translate3d(47vw, 79vh, 37px);
-  }
-}
-.particle:nth-child(6) {
-  animation: particle-animation-6 60s infinite;
-  opacity: 0.72;
-  height: 6px;
-  width: 6px;
-  animation-delay: -1.2s;
-  transform: translate3d(49vw, 26vh, 55px);
-  background: hsl(78, 70%, 50%);
+.carousel__slides {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: flex;
 }
 
-@keyframes particle-animation-7 {
-  100% {
-    transform: translate3d(83vw, 32vh, 27px);
-  }
-}
-.particle:nth-child(7) {
-  animation: particle-animation-7 60s infinite;
-  opacity: 0.52;
-  height: 7px;
-  width: 7px;
-  animation-delay: -1.4s;
-  transform: translate3d(47vw, 66vh, 2px);
-  background: hsl(260, 70%, 50%);
+.carousel__slide {
+    position: relative;
+    display: block;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+    box-sizing: border-box;
+    white-space: normal;
+    
+    figure {
+        display: flex;
+        margin: 0;
+    }
+    
+    div {
+        @include aspect-ratio(2,1);
+        width: 100%;
+        height: 100%;
+    }
+    
+    img {
+        display: block;
+        flex: 1 1 auto;
+        object-fit: cover;
+    }
+    
+    figcaption {
+        align-self: flex-end;
+        padding: 20px 20px 0 20px;
+        flex: 0 0 auto;
+        width: 25%;
+        min-width: 150px;
+        color: #044464;
+        font-family: 'Lato', sans-serif;
+
+    }
+    .caption{
+        color: #045767;
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+        
+    }
+    .credit {
+        margin-top: 1rem;
+        color: rgba(0, 0, 0, 0.5);
+        display: block;        
+        font-family: 'Lato', sans-serif;
+    }
+    
+    &.scrollable {
+        overflow-y: scroll;
+    }
 }
 
-@keyframes particle-animation-8 {
-  100% {
-    transform: translate3d(34vw, 49vh, 74px);
-  }
+.carousel__thumbnails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+    margin: 0 -10px;
+    
+    .carousel__slides + & {
+        margin-top: 20px;
+    }
+    
+    li {        
+        flex: 1 1 auto;
+        max-width: calc((100% / 6) - 20px);  
+        margin: 0 10px;
+        transition: all 300ms ease-in-out;
+    }
+    
+    label {
+        display: block;
+        @include aspect-ratio(1,.6);
+        
+                  
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            
+            img {
+                box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.25);
+                transition: all 300ms ease-in-out;
+            }
+        }
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
 }
-.particle:nth-child(8) {
-  animation: particle-animation-8 60s infinite;
-  opacity: 0.39;
-  height: 6px;
-  width: 6px;
-  animation-delay: -1.6s;
-  transform: translate3d(17vw, 77vh, 11px);
-  background: hsl(3, 70%, 50%);
-}
+// // <!-- 'src':'https://rare-gallery.com/uploads/posts/789847-Russian-River-Healdsburg-USA-Autumn-Rivers-Forests.jpg',
+// 'title':'Russian River Project',
+// 'copy':'A study on invasive species and environmental factors at play'
 
-@keyframes particle-animation-9 {
-  100% {
-    transform: translate3d(26vw, 55vh, 23px);
-  }
-}
-.particle:nth-child(9) {
-  animation: particle-animation-9 60s infinite;
-  opacity: 0.47;
-  height: 9px;
-  width: 9px;
-  animation-delay: -1.8s;
-  transform: translate3d(85vw, 22vh, 60px);
-  background: hsl(334, 70%, 50%);
-}
+// 'src':'https://media.zenfs.com/en-US/best_life_342/3547fb09e6acab21e34ab8fe2591f17d', 
+// 'title':'Dung Beetles',
+// 'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
 
-@keyframes particle-animation-10 {
-  100% {
-    transform: translate3d(17vw, 14vh, 81px);
-  }
-}
-.particle:nth-child(10) {
-  animation: particle-animation-10 60s infinite;
-  opacity: 0.53;
-  height: 9px;
-  width: 9px;
-  animation-delay: -2s;
-  transform: translate3d(28vw, 67vh, 12px);
-  background: hsl(215, 70%, 50%);
-}
+// 'src':'https://wallpapercave.com/wp/wp2269709.jpg', 
+// 'title':'Honey Bees',
+// 'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
 
-@keyframes particle-animation-11 {
-  100% {
-    transform: translate3d(40vw, 46vh, 68px);
-  }
-}
-.particle:nth-child(11) {
-  animation: particle-animation-11 60s infinite;
-  opacity: 0.72;
-  height: 8px;
-  width: 8px;
-  animation-delay: -2.2s;
-  transform: translate3d(61vw, 62vh, 37px);
-  background: hsl(41, 70%, 50%);
-}
-
-@keyframes particle-animation-12 {
-  100% {
-    transform: translate3d(87vw, 34vh, 47px);
-  }
-}
-.particle:nth-child(12) {
-  animation: particle-animation-12 60s infinite;
-  opacity: 0.93;
-  height: 7px;
-  width: 7px;
-  animation-delay: -2.4s;
-  transform: translate3d(90vw, 6vh, 28px);
-  background: hsl(329, 70%, 50%);
-}
-
-@keyframes particle-animation-13 {
-  100% {
-    transform: translate3d(56vw, 57vh, 29px);
-  }
-}
-.particle:nth-child(13) {
-  animation: particle-animation-13 60s infinite;
-  opacity: 0.5;
-  height: 9px;
-  width: 9px;
-  animation-delay: -2.6s;
-  transform: translate3d(39vw, 46vh, 55px);
-  background: hsl(299, 70%, 50%);
-}
-
-@keyframes particle-animation-14 {
-  100% {
-    transform: translate3d(7vw, 49vh, 43px);
-  }
-}
-.particle:nth-child(14) {
-  animation: particle-animation-14 60s infinite;
-  opacity: 0.33;
-  height: 10px;
-  width: 10px;
-  animation-delay: -2.8s;
-  transform: translate3d(78vw, 62vh, 43px);
-  background: hsl(188, 70%, 50%);
-}
-
-@keyframes particle-animation-15 {
-  100% {
-    transform: translate3d(43vw, 7vh, 67px);
-  }
-}
-.particle:nth-child(15) {
-  animation: particle-animation-15 60s infinite;
-  opacity: 0.81;
-  height: 7px;
-  width: 7px;
-  animation-delay: -3s;
-  transform: translate3d(2vw, 51vh, 13px);
-  background: hsl(236, 70%, 50%);
-}
-
-@keyframes particle-animation-16 {
-  100% {
-    transform: translate3d(54vw, 3vh, 16px);
-  }
-}
-.particle:nth-child(16) {
-  animation: particle-animation-16 60s infinite;
-  opacity: 0.8;
-  height: 7px;
-  width: 7px;
-  animation-delay: -3.2s;
-  transform: translate3d(49vw, 48vh, 69px);
-  background: hsl(60, 70%, 50%);
-}
-
-@keyframes particle-animation-17 {
-  100% {
-    transform: translate3d(61vw, 82vh, 62px);
-  }
-}
-.particle:nth-child(17) {
-  animation: particle-animation-17 60s infinite;
-  opacity: 0.42;
-  height: 7px;
-  width: 7px;
-  animation-delay: -3.4s;
-  transform: translate3d(61vw, 69vh, 13px);
-  background: hsl(249, 70%, 50%);
-}
-
-@keyframes particle-animation-18 {
-  100% {
-    transform: translate3d(13vw, 12vh, 23px);
-  }
-}
-.particle:nth-child(18) {
-  animation: particle-animation-18 60s infinite;
-  opacity: 0.76;
-  height: 9px;
-  width: 9px;
-  animation-delay: -3.6s;
-  transform: translate3d(63vw, 83vh, 52px);
-  background: hsl(337, 70%, 50%);
-}
-
-@keyframes particle-animation-19 {
-  100% {
-    transform: translate3d(66vw, 49vh, 57px);
-  }
-}
-.particle:nth-child(19) {
-  animation: particle-animation-19 60s infinite;
-  opacity: 0.45;
-  height: 10px;
-  width: 10px;
-  animation-delay: -3.8s;
-  transform: translate3d(40vw, 26vh, 62px);
-  background: hsl(254, 70%, 50%);
-}
-
-@keyframes particle-animation-20 {
-  100% {
-    transform: translate3d(85vw, 34vh, 44px);
-  }
-}
-.particle:nth-child(20) {
-  animation: particle-animation-20 60s infinite;
-  opacity: 0.39;
-  height: 6px;
-  width: 6px;
-  animation-delay: -4s;
-  transform: translate3d(51vw, 19vh, 38px);
-  background: hsl(193, 70%, 50%);
-}
-
-@keyframes particle-animation-21 {
-  100% {
-    transform: translate3d(68vw, 73vh, 28px);
-  }
-}
-.particle:nth-child(21) {
-  animation: particle-animation-21 60s infinite;
-  opacity: 0.23;
-  height: 8px;
-  width: 8px;
-  animation-delay: -4.2s;
-  transform: translate3d(40vw, 13vh, 95px);
-  background: hsl(248, 70%, 50%);
-}
-
-@keyframes particle-animation-22 {
-  100% {
-    transform: translate3d(26vw, 59vh, 4px);
-  }
-}
-.particle:nth-child(22) {
-  animation: particle-animation-22 60s infinite;
-  opacity: 0.51;
-  height: 10px;
-  width: 10px;
-  animation-delay: -4.4s;
-  transform: translate3d(5vw, 56vh, 70px);
-  background: hsl(74, 70%, 50%);
-}
-
-@keyframes particle-animation-23 {
-  100% {
-    transform: translate3d(42vw, 78vh, 32px);
-  }
-}
-.particle:nth-child(23) {
-  animation: particle-animation-23 60s infinite;
-  opacity: 0.77;
-  height: 9px;
-  width: 9px;
-  animation-delay: -4.6s;
-  transform: translate3d(52vw, 25vh, 97px);
-  background: hsl(102, 70%, 50%);
-}
-
-@keyframes particle-animation-24 {
-  100% {
-    transform: translate3d(79vw, 50vh, 46px);
-  }
-}
-.particle:nth-child(24) {
-  animation: particle-animation-24 60s infinite;
-  opacity: 0.09;
-  height: 6px;
-  width: 6px;
-  animation-delay: -4.8s;
-  transform: translate3d(52vw, 45vh, 69px);
-  background: hsl(179, 70%, 50%);
-}
-
-@keyframes particle-animation-25 {
-  100% {
-    transform: translate3d(63vw, 8vh, 25px);
-  }
-}
-.particle:nth-child(25) {
-  animation: particle-animation-25 60s infinite;
-  opacity: 0.89;
-  height: 8px;
-  width: 8px;
-  animation-delay: -5s;
-  transform: translate3d(29vw, 51vh, 14px);
-  background: hsl(295, 70%, 50%);
-}
-
-@keyframes particle-animation-26 {
-  100% {
-    transform: translate3d(82vw, 47vh, 87px);
-  }
-}
-.particle:nth-child(26) {
-  animation: particle-animation-26 60s infinite;
-  opacity: 0.84;
-  height: 8px;
-  width: 8px;
-  animation-delay: -5.2s;
-  transform: translate3d(61vw, 41vh, 34px);
-  background: hsl(271, 70%, 50%);
-}
-
-@keyframes particle-animation-27 {
-  100% {
-    transform: translate3d(58vw, 37vh, 8px);
-  }
-}
-.particle:nth-child(27) {
-  animation: particle-animation-27 60s infinite;
-  opacity: 0.89;
-  height: 7px;
-  width: 7px;
-  animation-delay: -5.4s;
-  transform: translate3d(88vw, 78vh, 33px);
-  background: hsl(94, 70%, 50%);
-}
-
-@keyframes particle-animation-28 {
-  100% {
-    transform: translate3d(21vw, 88vh, 47px);
-  }
-}
-.particle:nth-child(28) {
-  animation: particle-animation-28 60s infinite;
-  opacity: 0.32;
-  height: 7px;
-  width: 7px;
-  animation-delay: -5.6s;
-  transform: translate3d(18vw, 34vh, 1px);
-  background: hsl(256, 70%, 50%);
-}
-
-@keyframes particle-animation-29 {
-  100% {
-    transform: translate3d(67vw, 4vh, 52px);
-  }
-}
-.particle:nth-child(29) {
-  animation: particle-animation-29 60s infinite;
-  opacity: 0.6;
-  height: 10px;
-  width: 10px;
-  animation-delay: -5.8s;
-  transform: translate3d(50vw, 3vh, 73px);
-  background: hsl(192, 70%, 50%);
-}
-
-@keyframes particle-animation-30 {
-  100% {
-    transform: translate3d(39vw, 61vh, 1px);
-  }
-}
-.particle:nth-child(30) {
-  animation: particle-animation-30 60s infinite;
-  opacity: 0.28;
-  height: 9px;
-  width: 9px;
-  animation-delay: -6s;
-  transform: translate3d(30vw, 57vh, 20px);
-  background: hsl(349, 70%, 50%);
-}
-
-.container {
-  display: flex;
-  width: 100%;
-  padding: 4% 2%;
-  box-sizing: border-box;
-  height: 80vh;
-}
-
-.boxinfo {
-  flex: 1;
-  overflow: hidden;
-  transition: 0.5s;
-  margin: 0 2%;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-  line-height: 0;
-}
-
-.boxinfo > img {
-  width: 100%;
-  height: calc(100% - 10vh);
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.boxinfo > span {
-  font-size: 3.8vh;
-  display: block;
-  text-align: center;
-  height: 5vh;
-  line-height: 2.6;
-}
-
-.boxinfo:hover {
-  flex: 1 1 50%;
-}
-
-.boxinfo:hover > img {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: "Lato";
-  color: #2e552e;
-}
-
-img {
-  max-width: 100%;
-}
-
-.caption {
-  position: absolute;
-  top: 50%;
-  left: 8rem;
-  z-index: 9;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: 500ms ease opacity, 500ms ease transform;
-  transform: translateY(60px);
-}
-.caption.current-caption {
-  transition-delay: 1000ms;
-  opacity: 1;
-  transform: translateY(0);
-}
-.caption.previous-caption {
-  transform: translateY(-60px);
-}
-.caption .caption-heading {
-  transition: 500ms ease-in all;
-}
-.caption .caption-heading h1 {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  text-indent: -0.2rem;
-  letter-spacing: 0.2rem;
-  font-weight: 300;
-}
-.caption .caption-subhead {
-  font-size: 1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 4px;
-  word-spacing: 0.1rem;
-  margin-bottom: 2.5rem;
-  display: block;
-}
-.caption a.btn {
-  color: #333;
-  font-size: 0.8rem;
-  text-decoration: none;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  position: relative;
-  z-index: 9;
-  transition: 250ms ease-in background-color, 500ms ease-in color;
-}
-.caption a.btn:hover {
-  background-color: black;
-  color: white;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: whitesmoke;
-  display: flex;
-  position: relative;
-}
-
-.left-col, .right-col {
-  width: 100%;
-  box-sizing: border-box;
-  height: calc(100% - 4rem);
-  overflow: hidden;
-}
-
-.left-col {
-  background-size: cover;
-  background-position: center top;
-  overflow: hidden;
-  margin: 2rem;
-  position: relative;
-}
-.left-col .slide {
-  filter: brightness(100%);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-position: left top !important;
-  background-size: cover !important;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: 1000ms cubic-bezier(1, 0.04, 0.355, 1) transform, 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) clip-path;
-  transform: translateY(-100%);
-  scale: 1;
-  z-index: -1;
-}
-.left-col .slide.previous {
-  z-index: 1;
-  opacity: 1;
-  transform: translateY(0);
-  animation-delay: 1s;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  transition: 3s ease transform;
-  will-change: transform;
-}
-.left-col .slide.previous.change {
-  transform: translateY(50%);
-}
-.left-col .slide.next {
-  transform: translateY(-100%);
-  z-index: 3;
-  opacity: 1;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-}
-.left-col .slide.current {
-  opacity: 1;
-  transform: translateY(0) scale(1.25);
-  z-index: 2;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.right-col {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right-col .preview {
-  max-width: 400px;
-}
-
-.navslide {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 6;
-  overflow: hidden;
-}
-.navslide a {
-  color: rgb(250, 250, 250);
-  font-size: 3rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-}
-.navslide:hover .slide-up, .navslide:hover .slide-down {
-  opacity: 0.5;
-  transform: translateX(0);
-}
-.navslide:hover .slide-up {
-  opacity: 0;
-}
-.navslide .slide-up, .navslide .slide-down {
-  display: block;
-  position: absolute;
-  text-align: center;
-  padding: 1rem;
-  opacity: 0;
-  transition: 0.25s ease opacity, 0.25s ease transform;
-  z-index: 99;
-}
-.navslide .slide-up:hover, .navslide .slide-down:hover {
-  opacity: 1;
-}
-.navslide .slide-up a, .navslide .slide-down a {
-  text-decoration: none;
-  font-weight: 300 !important;
-}
-.navslide .slide-up {
-  top: 50%;
-  left: 0;
-  transform: translateX(-100%);
-}
-.navslide .slide-down {
-  top: 50%;
-  right: 0;
-  transform: translateX(100%);
-}/*# sourceMappingURL=test.css.map */
+// 'src':'https://media.istockphoto.com/id/1303715071/vector/dna-gel-run-abstract-background.jpg?s=612x612&w=0&k=20&c=B3Qc-0Ew1Th0bC07S4Fd47kDsNkySE9qa2Xi_O9o77M=', 
+// 'title':'View All Projects',
+// // 'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.' -->
